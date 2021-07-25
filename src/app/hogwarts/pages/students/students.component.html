@@ -1,0 +1,12 @@
+<div>  
+  <h2>Estudiantes</h2>
+  <hr>
+</div>
+<div class="row center-content" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="row">
+  <div class="col" *ngIf="dataSource.data.length!=0 && !loading">
+    <app-tables [dataSource]="dataSource"></app-tables>
+  </div>
+</div>

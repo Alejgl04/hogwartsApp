@@ -1,0 +1,39 @@
+<div class="mat-elevation-z8">
+  <div class="pl-4">
+    <mat-form-field appearance="standard">
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Buscar..." #input>
+    </mat-form-field>
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="patronus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Patronus. </th>
+      <td mat-cell *matCellDef="let element"> {{element.patronus}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="yearOfBirth">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Año. </th>
+      <td mat-cell *matCellDef="let element"> {{element.yearOfBirth}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen. </th>
+      <td mat-cell *matCellDef="let element">
+        <img src="{{element.image}}" alt="{{element.image}}" width="30px">
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">no hay registros con "{{input.value}}"</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

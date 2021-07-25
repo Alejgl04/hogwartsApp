@@ -1,0 +1,21 @@
+<div>  
+  <h2>Personajes</h2>
+  <hr>
+  <section>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="getHouse('slytherin')">Slytherin</button>
+      <button mat-raised-button (click)="getHouse('gryffindor')" color="primary">Gryffindor</button>
+      <button mat-raised-button (click)="getHouse('ravenclaw')" color="accent">Ravenclaw</button>
+      <button mat-raised-button (click)="getHouse('hufflepuff')" color="warn">Hufflepuff</button>
+    </div>
+  </section>
+  <hr>
+</div>
+<div class="row center-content" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="row">
+  <div class="col" *ngIf="dataSource.data.length!=0 && !loading">
+    <app-tables [dataSource]="dataSource"></app-tables>
+  </div>
+</div>
