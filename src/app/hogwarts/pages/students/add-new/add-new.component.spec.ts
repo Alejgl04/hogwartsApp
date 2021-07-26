@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { AddNewComponent } from './add-new.component';
+import { MaterialModule } from '../../../../material/material.module';
 
 describe('AddNewComponent', () => {
   let component: AddNewComponent;
@@ -11,9 +12,11 @@ describe('AddNewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AddNewComponent ],
+      imports: [
+        MaterialModule
+      ],
       providers:[
         FormBuilder,
-        MatSnackBar
       ],
     })
     .compileComponents();
