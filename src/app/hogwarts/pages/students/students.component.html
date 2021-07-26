@@ -1,6 +1,17 @@
 <div>  
   <h2>Estudiantes</h2>
   <hr>
+  <section>
+    <div class="example-button-row">
+      <a routerLink="/public/students/new-students">
+        <button mat-raised-button >Nuevo Estudiante</button>
+      </a>
+      <a routerLink="/public/students/list-students">
+        <button mat-raised-button >Nuevas Solicitudes</button>
+      </a>
+    </div>
+  </section>
+  <hr>
 </div>
 <div class="row center-content" *ngIf="loading">
   <mat-spinner></mat-spinner>

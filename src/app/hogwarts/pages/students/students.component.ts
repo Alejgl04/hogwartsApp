@@ -12,7 +12,8 @@ export class StudentsComponent implements OnInit {
   dataSource = new MatTableDataSource<Students>([]);
   loading: boolean = false;
   constructor(
-    private hogwartsService: HogwartsService
+    private hogwartsService: HogwartsService,
+
   ) { }
 
   ngOnInit(): void {

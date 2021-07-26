@@ -1,0 +1,48 @@
+<h2>Nuevo Estudiantes</h2>
+<hr>
+<form [formGroup]="studentForm" autocomplete="off" (ngSubmit)="sendRegister();">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Nombre</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <span *ngIf="fieldNotValid('name')" class="text-danger">
+        Completa este campo
+      </span>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Patronus</label>
+        <input type="email" class="form-control" formControlName="patronus">
+        <span *ngIf="fieldNotValid('patronus')" class="text-danger">
+          Completa este campo
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Año</label>
+        <input type="text" class="form-control" formControlName="year">
+      </div>
+      <span *ngIf="fieldNotValid('year')" class="text-danger">
+        Completa este campo
+      </span>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="bmd-label-floating">Ascendencia</label>
+        <input type="text" autocomplete="off" class="form-control" formControlName="ancestry">
+      </div>
+      <span *ngIf="fieldNotValid('ancestry')" class="text-danger">
+        Completa este campo <br> 
+      </span>
+    </div>
+  </div>
+  <br>
+  <button type="submit" mat-button >Registrar</button>
+
+  <div class="clearfix"></div>
+</form>

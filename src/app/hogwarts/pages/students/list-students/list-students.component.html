@@ -1,0 +1,17 @@
+<div>  
+  <h2>Solicitudes Estudiantes</h2>
+  <hr>
+</div>
+
+<div class="row" *ngIf="dataStudent">
+  <ul class="list-group">
+    <li class="list-group-item"
+        *ngFor="let item of dataStudent">
+        Nombre: {{item.name}} - Patronus: {{item.patronus}} - Año: {{item.year}} - Ascendencia: {{item.ancestry}}
+    </li>
+  </ul>
+  
+</div>
+<div class="row" *ngIf="!dataStudent">
+  No hay registros de nuevas solicitudes
+</div>
